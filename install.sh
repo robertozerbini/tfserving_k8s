@@ -1,7 +1,5 @@
 /bin/bash
 
-cd ./tfserving_k8s
-
 gcloud config set compute/zone us-central1-f
 PROJECT_ID=$(gcloud config get-value project)
 CLUSTER_NAME=my-cluster
