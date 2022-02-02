@@ -1,6 +1,6 @@
-/bin/bash
+#!/bin/bash
 
-#Vatiables
+#Variables
 gcloud config set compute/zone us-central1-f
 PROJECT_ID=$(gcloud config get-value project)
 CLUSTER_NAME=my-cluster
