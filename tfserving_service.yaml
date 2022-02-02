@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: tfserving-service
+  name: tfserving-service
+spec:
+  ports:
+  - port: 8501
+    targetPort: 8501
+  selector:
+    app: tensorflowserving
+  type: LoadBalancer

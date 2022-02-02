@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tensorflowserving
+spec:
+  selector:
+    matchLabels:
+      app: tensorflowserving
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tensorflowserving
+    spec:
+      containers:
+      - name: resnet
+        image: gcr.io/playground-s-11-8437cfb0/tensorflow/serving
+        env:
+        - name: MODEL_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: myconfig
+              key: model
+        ports:
+        - containerPort: 8501
+        volumeMounts:
+          - name: tfservingvolume
+            mountPath: /models
+      volumes:
+        - name: tfservingvolume
+          persistentVolumeClaim:
+            claimName: tfservingvolume
