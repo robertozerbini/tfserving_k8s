@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: resnet
-        image: gcr.io/<PROJECT_ID>/tensorflow/serving
+        image: gcr.io/<PROJECT_ID>/<APP_NAME>
         env:
         - name: MODEL_NAME
           valueFrom:
