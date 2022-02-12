@@ -1,6 +1,6 @@
 # tfserving_k8s
 
-Create TFserving loaded with Resnet model on GCP
+Create Tensorflow serving loaded with Resnet model on GCP Google cloud platform
 
 # Usage
 
